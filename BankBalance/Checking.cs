@@ -6,15 +6,23 @@ namespace BankBalance
 {
     class Checking : Account
     {
+        protected override decimal StartBalance { set { base.StartBalance = value - 10; } }
         public Checking(decimal balance)
         {
             Console.WriteLine("Inside the Checking child class constructor");
-            BankBalance = balance;
+            BankBalance = balance + StartBalance;
         }
         public void DeductServiceCharge()
         {
             BankBalance -= 1.5m;
         }
+
+        public override void ShowStartBalance()
+        {
+            Console.WriteLine($"Your account was Debited: {StartBalance.ToString("C")}");
+            base.ShowStartBalance(); //optional call to the base method
+        }
+
 
     }
 }
