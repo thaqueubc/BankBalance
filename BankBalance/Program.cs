@@ -6,7 +6,13 @@ namespace BankBalance
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Savings mySavingAccount = new Savings(100);
+            mySavingAccount.AddMonthlyInterest(0.0045m);
+            mySavingAccount.ShowBalance();
+
+            Checking myCheckingAccount = new Checking(100);
+            myCheckingAccount.DeductServiceCharge();
+            myCheckingAccount.ShowBalance();
         }
     }
 }
