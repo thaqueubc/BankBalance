@@ -12,8 +12,11 @@ namespace BankBalance
         public Savings() { }
         public Savings( decimal balance)
         {
-            Console.WriteLine("Inside the Savings child class constructor");
+            //Console.WriteLine("Inside the Savings child class constructor");
             BankBalance = balance + StartBalance ;
+            ShowStartBalance();
+            ShowCurrentBalance();
+            ShowClosingBalance();
            
         }
 
@@ -28,6 +31,10 @@ namespace BankBalance
             base.ShowStartBalance(); //optional call to the base method
         }
 
-
+        protected override void ShowClosingBalance()
+        {
+            AddMonthlyInterest(0.0045m);
+            Console.WriteLine("Your Closing Balance is : " + BankBalance);
+        }
     }
 }

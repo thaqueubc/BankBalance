@@ -4,11 +4,13 @@ using System.Text;
 
 namespace BankBalance
 {
-    class Account
+    abstract class Account
     {
         protected decimal BankBalance { get; set; }
 
         protected virtual decimal StartBalance { get; set; }
+
+        protected abstract void ShowClosingBalance();
         protected Account()
         {
             Console.WriteLine("Inside the Account base class constructor");
@@ -21,9 +23,9 @@ namespace BankBalance
 
         }
 
-        public void ShowBalance()
+        public void ShowCurrentBalance()
         {
-            Console.WriteLine($"The balance is: {BankBalance.ToString("C")}");
+            Console.WriteLine($"The Current balance is: {BankBalance.ToString("C")}");
         }
 
     }

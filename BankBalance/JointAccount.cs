@@ -15,7 +15,7 @@ namespace BankBalance
         {
             AccountHolderA = accountHolderA;
             AccountHolderB = accountHolderB;
-            //balance = OpeningBalance;
+           
         }
 
         public void showAccountHolderName()
@@ -24,5 +24,7 @@ namespace BankBalance
             Console.WriteLine("Acoount Holder B : " + AccountHolderB);
 
         }
+
+
     }
 }
