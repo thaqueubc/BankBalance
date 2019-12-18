@@ -13,6 +13,11 @@ namespace BankBalance
             Checking myCheckingAccount = new Checking(100);
             myCheckingAccount.DeductServiceCharge();
             myCheckingAccount.ShowBalance();
+
+            JointAccount ourJointAccount = new JointAccount("Tasnuva Haque", "Nobinur Rahman", 150);
+            ourJointAccount.showAccountHolderName();
+            ourJointAccount.AddMonthlyInterest(0.0049m);
+            ourJointAccount.ShowBalance();
         }
     }
 }

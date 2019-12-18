@@ -6,7 +6,9 @@ namespace BankBalance
 {
     class Savings : Account
     {
-        public Savings(decimal balance)
+        protected decimal balance { get; set; }
+        public Savings() { }
+        public Savings( decimal balance)
         {
             Console.WriteLine("Inside the Savings child class constructor");
             BankBalance = balance;
